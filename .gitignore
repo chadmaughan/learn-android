@@ -1,0 +1,29 @@
+.metadata
+
+tmp/**
+tmp/**/*
+*.tmp
+
+*.bak
+*.swp
+*~.nib
+*~
+local.properties
+*.jar
+.classpath
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# generated files
+bin
+gen
+
+# OS related files
+.DS_Store
+Thumbs.db
+Desktop.ini
