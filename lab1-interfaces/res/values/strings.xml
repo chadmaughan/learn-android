@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="firstLabel">First Number:</string>
+    <string name="secondLabel">Second Number:</string>
+    <string name="sumText">Sum</string>
+    <string name="app_name">Declarative</string>
+</resources>
