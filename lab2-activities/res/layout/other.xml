@@ -4,10 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <Button 
-	    android:id="@+id/otherActivityButton"
-        android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content"
-	    android:text="@string/otherActivityString" />
+	<TextView  
+	    android:id="@+id/otherTextView"
+        android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" />
 	
 </LinearLayout>
