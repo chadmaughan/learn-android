@@ -5,10 +5,15 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +27,7 @@ public class MainActivity extends ListActivity {
         setContentView(R.layout.main);
         
         Resources resources = getResources();
-        rumiNumbers = resources.getStringArray(R.array.list);
+        String[] numbers = resources.getStringArray(R.array.list);
         
         this.getListView().setTextFilterEnabled(true);
         this.getListView().setOnItemClickListener(new OnItemClickListener() {
@@ -42,7 +47,7 @@ public class MainActivity extends ListActivity {
 			}        	
         });
                 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rumiNumbers);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, numbers);
         this.getListView().setAdapter(adapter);
         
         // allow for long-click context menu

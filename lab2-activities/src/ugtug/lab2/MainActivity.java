@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
             	
 				Intent otherIntent = new Intent(MainActivity.this, OtherActivity.class);
 				otherIntent.putExtra("message", "Hello from MainActivity");
+				startActivity(otherIntent);
 
 			}
 		});

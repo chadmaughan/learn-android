@@ -8,6 +8,6 @@
 	    android:id="@+id/otherActivityButton"
         android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content"
-	    android:text="@string/otherActivityString" />
+	    android:text="@string/otherActivityButtonString" />
 	
 </LinearLayout>
