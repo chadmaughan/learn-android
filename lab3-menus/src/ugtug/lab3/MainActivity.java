@@ -70,7 +70,7 @@ public class MainActivity extends ListActivity {
 		Toast t = Toast.makeText(getApplicationContext(), "Clicked " + item.getTitle(), Toast.LENGTH_SHORT);
 		t.show();
 
-		Intent displayIntent = new Intent(MainActivity.this, DisplayActivity.class);
+		Intent displayIntent = new Intent(MainActivity.this, OtherActivity.class);
 
 		switch(item.getItemId()) {
 			
