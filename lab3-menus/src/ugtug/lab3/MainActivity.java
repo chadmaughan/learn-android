@@ -55,7 +55,6 @@ public class MainActivity extends ListActivity {
         // allow for long-click context menu
         registerForContextMenu(this.getListView());
 
-        setContentView(R.layout.main);
     }
     
 	@Override
@@ -106,8 +105,8 @@ public class MainActivity extends ListActivity {
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		Log.v("MainActivity", v.getClass().getName());
 		
-		TextView tv = (TextView) ((ListView) v).getSelectedView();
-		CharSequence text = tv.getText();
+//		TextView tv = (TextView) ((ListView) v).getSelectedView();
+//		CharSequence text = tv.getText();
 		
 		menu.setHeaderTitle("Context Menu");
 		menu.add(200, 200, 200, "Context One");
