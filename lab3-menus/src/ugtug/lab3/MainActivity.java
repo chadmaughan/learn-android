@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 public class MainActivity extends ListActivity {
 	
+	private static final String TAG = MainActivity.class.getSimpleName();
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,7 @@ public class MainActivity extends ListActivity {
 				Toast t = Toast.makeText(getApplicationContext(), "Displaying " + text, Toast.LENGTH_SHORT);
 				t.show();
 
-				Log.v("MainActivity", "displaying: " + text + ", position: " + position + ", id:= " + id);
+				Log.v(TAG, "displaying: " + text + ", position: " + position + ", id:= " + id);
 
 				Intent otherIntent = new Intent(MainActivity.this, OtherActivity.class);
 				otherIntent.putExtra("key", text);
@@ -59,8 +61,9 @@ public class MainActivity extends ListActivity {
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		menu.add(0,1,0,"Bio");
-		menu.add(0,2,0,"Works");
+		menu.add(0,1,0,"One");
+		menu.add(0,2,0,"Two");
+		menu.add(0,3,0,"Three");
 		return true;
     }
 	
@@ -70,22 +73,28 @@ public class MainActivity extends ListActivity {
 		Toast t = Toast.makeText(getApplicationContext(), "Clicked " + item.getTitle(), Toast.LENGTH_SHORT);
 		t.show();
 
-		Intent displayIntent = new Intent(MainActivity.this, OtherActivity.class);
+		Intent otherIntent = new Intent(MainActivity.this, OtherActivity.class);
 
 		switch(item.getItemId()) {
 			
-			// bio
+			// one
 			case 1:
-				displayIntent.putExtra("key", "bio");
-				startActivity(displayIntent);
+				otherIntent.putExtra("key", "one");
+				startActivity(otherIntent);
 				break;
 
-			// works
+			// two
 			case 2:
-				displayIntent.putExtra("key", "works");
-				startActivity(displayIntent);
+				otherIntent.putExtra("key", "two");
+				startActivity(otherIntent);
 				break;
-				
+
+			// three
+			case 3:
+				otherIntent.putExtra("key", "three");
+				startActivity(otherIntent);
+				break;
+
 			default:
 				break;
 		}
@@ -100,12 +109,10 @@ public class MainActivity extends ListActivity {
 		TextView tv = (TextView) ((ListView) v).getSelectedView();
 		CharSequence text = tv.getText();
 		
-		rumiTextNumber = text.toString();
-
-		menu.setHeaderTitle("Read, Listen, Search");
-		menu.add(200, 200, 200, "Read");
-		menu.add(200, 201, 201, "Listen");
-		menu.add(200, 202, 202, "Search");
+		menu.setHeaderTitle("Context Menu");
+		menu.add(200, 200, 200, "Context One");
+		menu.add(200, 201, 201, "Context Two");
+		menu.add(200, 202, 202, "Context Three");
 	}
 	
 	@Override
@@ -114,24 +121,22 @@ public class MainActivity extends ListActivity {
 		Toast t = Toast.makeText(getApplicationContext(), "Clicked " + item.getTitle(), Toast.LENGTH_SHORT);
 		t.show();
 
+		Intent otherActivity = new Intent(MainActivity.this, OtherActivity.class);
+
 		switch(item.getItemId()) {
 			case 200:
-				Intent quatrainReadIntent = new Intent(MainActivity.this, QuatrainActivity.class);
-				quatrainReadIntent.putExtra("key", rumiTextNumber);
-				startActivity(quatrainReadIntent);
+				otherActivity.putExtra("title", item.getTitle());
+				startActivity(otherActivity);
 				break;
 				
 			case 201:
-				Intent quatrainListenIntent = new Intent(MainActivity.this, QuatrainActivity.class);
-				quatrainListenIntent.putExtra("key", rumiTextNumber);
-				quatrainListenIntent.putExtra("mode", "listen");
-				startActivity(quatrainListenIntent);
+				otherActivity.putExtra("title", item.getTitle());
+				startActivity(otherActivity);
 				break;
 
 			case 202:
-				Intent searchIntent = new Intent(MainActivity.this, SearchActivity.class);
-				searchIntent.putExtra("key", rumiTextNumber);
-				startActivity(searchIntent);
+				otherActivity.putExtra("title", item.getTitle());
+				startActivity(otherActivity);
 				break;			
 		}
 		return true;

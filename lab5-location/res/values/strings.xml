@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, MainActivity!</string>
+    <string name="find_location">Find Location</string>
+    <string name="start">White House</string>
     <string name="app_name">Lab5 Location</string>
 
 </resources>

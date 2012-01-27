@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends Activity {
 
-	private final String TAG = MainActivity.class.getName();
+	private static final String TAG = MainActivity.class.getSimpleName();
 	
     /** Called when the activity is first created. */
     @Override
