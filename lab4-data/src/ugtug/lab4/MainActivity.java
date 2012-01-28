@@ -37,8 +37,8 @@ public class MainActivity extends Activity {
 				startActivity(preferencesActivity);
 				break;
 
-			case R.id.internal:
-				Intent internalStorageActivity = new Intent(getBaseContext(), InternalStorageActivity.class);
+			case R.id.storage:
+				Intent internalStorageActivity = new Intent(getBaseContext(), StorageActivity.class);
 				startActivity(internalStorageActivity);
 				break;
 

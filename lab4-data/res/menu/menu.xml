@@ -2,6 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/preferences"
           android:title="Preferences" />
-    <item android:id="@+id/internal"
-          android:title="Internal" />
+    <item android:id="@+id/storage"
+          android:title="Storage" />
 </menu>

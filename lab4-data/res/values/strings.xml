@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">Lab4 Data</string>
-
+    <string name="content_description">Image</string>
+    
 </resources>
